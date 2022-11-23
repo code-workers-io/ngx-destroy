@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/ngx-destroy",
+  "sourceRoot": "libs/ngx-destroy/src",
+  "prefix": "ngx-destroy",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/ngx-destroy"],
+      "options": {
+        "project": "libs/ngx-destroy/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ngx-destroy/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ngx-destroy/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ngx-destroy"],
+      "options": {
+        "jestConfig": "libs/ngx-destroy/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ngx-destroy/src/**/*.ts",
+          "libs/ngx-destroy/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
